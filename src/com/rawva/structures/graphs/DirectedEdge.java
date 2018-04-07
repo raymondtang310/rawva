@@ -51,7 +51,6 @@ class DirectedEdge<V> implements Edge<V> {
 	 *            - the object to compare to this
 	 * @return true if the specified object is equal to this, else false
 	 */
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
