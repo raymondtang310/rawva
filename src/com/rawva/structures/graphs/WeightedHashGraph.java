@@ -20,7 +20,7 @@ import java.util.Set;
  * @param <W>
  *            - the type of edge weights in this graph
  */
-public class WeightedHashMapGraph<V, W> implements WeightedGraph<V, W> {
+public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 
 	private final boolean isDirected;
 	private final Map<V, Set<V>> vertexNeighbors;
@@ -33,7 +33,7 @@ public class WeightedHashMapGraph<V, W> implements WeightedGraph<V, W> {
 	 *            - value to specify if this graph is directed (true) or
 	 *            undirected (false)
 	 */
-	public WeightedHashMapGraph(boolean isDirected) {
+	public WeightedHashGraph(boolean isDirected) {
 		this.isDirected = isDirected;
 		this.vertexNeighbors = new HashMap<>();
 		this.edgeWeights = new HashMap<>();
@@ -42,7 +42,7 @@ public class WeightedHashMapGraph<V, W> implements WeightedGraph<V, W> {
 	/**
 	 * Constructs an empty, directed WeightedHashMapGraph.
 	 */
-	public WeightedHashMapGraph() {
+	public WeightedHashGraph() {
 		this(true);
 	}
 

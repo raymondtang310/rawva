@@ -13,7 +13,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testDirectedAddEdge() {
-		WeightedHashMapGraph<Integer, Integer> graph = new WeightedHashMapGraph<>(true);
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>(true);
 		graph.addVertex(1);
 		graph.addVertex(null);
 		assertTrue(graph.addEdge(1, null));
@@ -27,7 +27,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testUndirectedAddEdge() {
-		WeightedHashMapGraph<Integer, Integer> graph = new WeightedHashMapGraph<>(false);
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>(false);
 		graph.addVertex(1);
 		graph.addVertex(null);
 		assertTrue(graph.addEdge(1, null));
@@ -41,7 +41,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testAddVertex() {
-		WeightedHashMapGraph<Integer, Integer> graph = new WeightedHashMapGraph<>();
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>();
 		assertTrue(graph.addVertex(1));
 		assertTrue(graph.addVertex(null));
 		assertFalse(graph.addVertex(null));
@@ -51,7 +51,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testDirectedContainsEdge() {
-		WeightedHashMapGraph<Integer, Integer> directedGraph = new WeightedHashMapGraph<>(true);
+		WeightedHashGraph<Integer, Integer> directedGraph = new WeightedHashGraph<>(true);
 		directedGraph.addVertex(null);
 		directedGraph.addVertex(1);
 		directedGraph.addEdge(1, null);
@@ -61,7 +61,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testUndirectedContainsEdge() {
-		WeightedHashMapGraph<Integer, Integer> undirectedGraph = new WeightedHashMapGraph<>(false);
+		WeightedHashGraph<Integer, Integer> undirectedGraph = new WeightedHashGraph<>(false);
 		undirectedGraph.addVertex(null);
 		undirectedGraph.addVertex(1);
 		undirectedGraph.addEdge(1, null);
@@ -71,7 +71,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testContainsVertex() {
-		WeightedHashMapGraph<Integer, Integer> graph = new WeightedHashMapGraph<>();
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>();
 		graph.addVertex(-1);
 		graph.addVertex(null);
 		assertTrue(graph.containsVertex(null));
@@ -82,7 +82,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testDirectedGetAdjacentElements() {
-		WeightedHashMapGraph<Integer, Integer> directedGraph = new WeightedHashMapGraph<>(true);
+		WeightedHashGraph<Integer, Integer> directedGraph = new WeightedHashGraph<>(true);
 		directedGraph.addVertex(1);
 		directedGraph.addVertex(2);
 		directedGraph.addVertex(3);
@@ -102,7 +102,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testUndirectedGetAdjacentElements() {
-		WeightedHashMapGraph<Integer, Integer> undirectedGraph = new WeightedHashMapGraph<>(false);
+		WeightedHashGraph<Integer, Integer> undirectedGraph = new WeightedHashGraph<>(false);
 		undirectedGraph.addVertex(1);
 		undirectedGraph.addVertex(2);
 		undirectedGraph.addVertex(3);
@@ -125,7 +125,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testDirectedGetNumberOfEdges() {
-		WeightedHashMapGraph<Integer, Integer> directedGraph = new WeightedHashMapGraph<>(true);
+		WeightedHashGraph<Integer, Integer> directedGraph = new WeightedHashGraph<>(true);
 		directedGraph.addVertex(1);
 		directedGraph.addVertex(2);
 		directedGraph.addVertex(3);
@@ -139,7 +139,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testUndirectedGetNumberOfEdges() {
-		WeightedHashMapGraph<Integer, Integer> undirectedGraph = new WeightedHashMapGraph<>(false);
+		WeightedHashGraph<Integer, Integer> undirectedGraph = new WeightedHashGraph<>(false);
 		undirectedGraph.addVertex(1);
 		undirectedGraph.addVertex(2);
 		undirectedGraph.addVertex(3);
@@ -153,7 +153,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testGetNumberOfVertices() {
-		WeightedHashMapGraph<Integer, Integer> graph = new WeightedHashMapGraph<>();
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>();
 		graph.addVertex(1);
 		graph.addVertex(2);
 		graph.addVertex(3);
@@ -165,7 +165,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testGetVertices() {
-		WeightedHashMapGraph<Integer, Integer> graph = new WeightedHashMapGraph<>();
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>();
 		graph.addVertex(1);
 		graph.addVertex(2);
 		graph.addVertex(3);
@@ -183,7 +183,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testDirectedGetWeight() {
-		WeightedHashMapGraph<Integer, String> graph = new WeightedHashMapGraph<>(true);
+		WeightedHashGraph<Integer, String> graph = new WeightedHashGraph<>(true);
 		graph.addVertex(1);
 		graph.addVertex(null);
 		graph.addVertex(-2);
@@ -199,7 +199,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testUndirectedGetWeight() {
-		WeightedHashMapGraph<Integer, String> graph = new WeightedHashMapGraph<>(false);
+		WeightedHashGraph<Integer, String> graph = new WeightedHashGraph<>(false);
 		graph.addVertex(1);
 		graph.addVertex(null);
 		graph.addVertex(-2);
@@ -215,7 +215,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testDirectedSetWeight() {
-		WeightedHashMapGraph<Integer, String> graph = new WeightedHashMapGraph<>(true);
+		WeightedHashGraph<Integer, String> graph = new WeightedHashGraph<>(true);
 		graph.addVertex(1);
 		graph.addVertex(null);
 		graph.addVertex(-2);
@@ -231,7 +231,7 @@ public class WeightedHashMapGraphTest {
 
 	@Test
 	public void testUndirectedSetWeight() {
-		WeightedHashMapGraph<Integer, String> graph = new WeightedHashMapGraph<>(false);
+		WeightedHashGraph<Integer, String> graph = new WeightedHashGraph<>(false);
 		graph.addVertex(1);
 		graph.addVertex(null);
 		graph.addVertex(-2);
