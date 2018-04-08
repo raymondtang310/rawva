@@ -75,10 +75,7 @@ class UndirectedEdge<V> implements Edge<V> {
 		Set<V> otherElements = new HashSet<>();
 		otherElements.add(other.tail);
 		otherElements.add(other.head);
-		if ((elements == null && otherElements == null) || (elements != null && elements.equals(otherElements))) {
-			return true;
-		}
-		return true;
+		return elements.equals(otherElements);
 	}
 
 	/**
