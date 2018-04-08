@@ -9,7 +9,7 @@ import java.util.Set;
 
 import org.junit.Test;
 
-public class WeightedHashMapGraphTest {
+public class WeightedHashGraphTest {
 
 	@Test
 	public void testDirectedAddEdge() {
