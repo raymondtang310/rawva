@@ -88,6 +88,9 @@ public class WeightedHashMapGraph<V, W> implements WeightedGraph<V, W> {
 	 */
 	@Override
 	public boolean addEdge(V tail, V head, W weight) {
+		if (!containsVertex(tail) || !containsVertex(head)) {
+			return false;
+		}
 		if (containsEdge(tail, head)) {
 			return false;
 		}
