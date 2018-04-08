@@ -12,7 +12,7 @@ import java.util.Set;
  * @param <V>
  *            - the type of elements in this edge
  */
-class UndirectedEdge<V> implements Edge<V> {
+public class UndirectedEdge<V> implements Graph.Edge<V> {
 
 	private final V tail;
 	private final V head;
@@ -25,7 +25,7 @@ class UndirectedEdge<V> implements Edge<V> {
 	 * @param e2
 	 *            - the other vertex to be part of this edge
 	 */
-	UndirectedEdge(V e1, V e2) {
+	public UndirectedEdge(V e1, V e2) {
 		this.tail = e1;
 		this.head = e2;
 	}

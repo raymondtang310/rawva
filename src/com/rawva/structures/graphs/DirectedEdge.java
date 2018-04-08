@@ -8,7 +8,7 @@ package com.rawva.structures.graphs;
  * @param <V>
  *            - the type of elements in this edge
  */
-class DirectedEdge<V> implements Edge<V> {
+public class DirectedEdge<V> implements Graph.Edge<V> {
 
 	private final V tail;
 	private final V head;
@@ -22,7 +22,7 @@ class DirectedEdge<V> implements Edge<V> {
 	 * @param head
 	 *            - the head vertex
 	 */
-	DirectedEdge(V tail, V head) {
+	public DirectedEdge(V tail, V head) {
 		this.tail = tail;
 		this.head = head;
 	}
