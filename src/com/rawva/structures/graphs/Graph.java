@@ -70,7 +70,7 @@ public interface Graph<V> {
 	 *             if the edge cannot be added at this time due to insertion
 	 *             restrictions
 	 */
-	public boolean addEdge(V tail, V head);
+	boolean addEdge(V tail, V head);
 
 	/**
 	 * Adds the specified element to this graph as a vertex. Returns true if the
@@ -93,7 +93,7 @@ public interface Graph<V> {
 	 *             if the specified element cannot be added at this time due to
 	 *             insertion restrictions
 	 */
-	public boolean addVertex(V elem);
+	boolean addVertex(V elem);
 
 	/**
 	 * Returns true if this graph contains an edge from tail to head. Returns
@@ -107,7 +107,7 @@ public interface Graph<V> {
 	 *            be tested
 	 * @return true if this graph contains an edge from tail to head, else false
 	 */
-	public boolean containsEdge(V tail, V head);
+	boolean containsEdge(V tail, V head);
 
 	/**
 	 * Returns true if this graph contains the specified element. Returns false
@@ -117,7 +117,7 @@ public interface Graph<V> {
 	 *            - the element whose presence in this graph is to be tested
 	 * @return true if this graph contains the specified element, else false
 	 */
-	public boolean containsVertex(V elem);
+	boolean containsVertex(V elem);
 
 	/**
 	 * Returns a set containing all elements that are adjacent to this element.
@@ -128,27 +128,27 @@ public interface Graph<V> {
 	 *            - the element whose neighbors we want
 	 * @return a set of elements that are adjacent to this element
 	 */
-	public Set<V> getAdjacentElements(V elem);
+	Set<V> getAdjacentElements(V elem);
 
 	/**
 	 * Returns the number of edges in this graph.
 	 * 
 	 * @return the number of edges in this graph
 	 */
-	public int getNumberOfEdges();
+	int getNumberOfEdges();
 
 	/**
 	 * Returns the number of elements (vertices) in this graph.
 	 * 
 	 * @return the number of elements in this graph
 	 */
-	public int getNumberOfVertices();
+	int getNumberOfVertices();
 
 	/**
 	 * Returns the set of elements (vertices) in this graph.
 	 * 
 	 * @return the set of elements (vertices) in this graph
 	 */
-	public Set<V> getVertices();
+	Set<V> getVertices();
 
 }

@@ -37,7 +37,7 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 *             if the edge cannot be added at this time due to insertion
 	 *             restrictions
 	 */
-	public boolean addEdge(V tail, V head, W weight);
+	boolean addEdge(V tail, V head, W weight);
 
 	/**
 	 * Returns the weight of the edge from tail to head if the edge exists and
@@ -54,7 +54,7 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 *             if one or both of the specified elements are null and this
 	 *             graph does not permit null elements
 	 */
-	public W getWeight(V tail, V head);
+	W getWeight(V tail, V head);
 
 	/**
 	 * Sets the weight of the edge from tail to head to the specified weight.
@@ -80,6 +80,6 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 *             if some property of one or more of the arguments prevents the
 	 *             weight of the edge to be set
 	 */
-	public W setWeight(V tail, V head, W weight);
+	W setWeight(V tail, V head, W weight);
 
 }
