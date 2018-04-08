@@ -16,64 +16,67 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 
 	/**
 	 * Adds an edge with the specified weight from the specified tail element to
-	 * the specified head element if the edge does not already exist. Returns
-	 * true if the edge was added to this graph after this call. If the edge
-	 * specified by the tail and head elements already exists, then false is
-	 * returned.
-	 * 
-	 * In order to add an edge between two elements, it is required that the two
-	 * elements have already been added to this graph. If the specified elements
-	 * are not in this graph, then no edge is added and false is returned.
+	 * the specified head element. Returns true if the edge was successfully
+	 * added to this graph after this call.
 	 * 
 	 * @param tail
-	 *            the tail vertex
+	 *            - the tail vertex
 	 * @param head
-	 *            the head vertex
+	 *            - the head vertex
 	 * @param weight
-	 *            the weight of the edge
-	 * @return true if the edge was added to this graph, else false
-	 * @throws ClassCastException
-	 *             if the class of the specified elements prevent them from
-	 *             being added to this graph
+	 *            - the weight of the edge
+	 * @return true if the edge was added to this graph after this call, else
+	 *         false
 	 * @throws NullPointerException
-	 *             if one or both of the specified elements are null and this
-	 *             graph does not permit null elements
+	 *             if one or more of the arguments are null and this graph does
+	 *             not permit null values
 	 * @throws IllegalArgumentException
-	 *             if some property of one or both of the elements prevents them
-	 *             from being added to this graph
+	 *             if some property of one or more of the arguments prevents the
+	 *             edge from being added to this graph
 	 * @throws IllegalStateException
-	 *             if the elements cannot be added at this time due to insertion
+	 *             if the edge cannot be added at this time due to insertion
 	 *             restrictions
 	 */
 	public boolean addEdge(V tail, V head, W weight);
 
 	/**
 	 * Returns the weight of the edge from tail to head if the edge exists and
-	 * has an associated weight, or null otherwise.
+	 * has an associated weight, or null otherwise. A null return may also
+	 * indicate that the weight of the edge was set to null, if the
+	 * implementation supports null values.
 	 * 
 	 * @param tail
-	 *            the tail vertex
+	 *            - the tail vertex
 	 * @param head
-	 *            the head vertex
+	 *            - the head vertex
 	 * @return the weight of the edge from tail to head
+	 * @throws NullPointerException
+	 *             if one or both of the specified elements are null and this
+	 *             graph does not permit null elements
 	 */
 	public W getWeight(V tail, V head);
 
 	/**
 	 * Sets the weight of the edge from tail to head to the specified weight.
 	 * Returns true if the weight of the edge is set successfully. Returns false
-	 * otherwise.
-	 * 
-	 * If the specified elements are not in this graph or if an edge from tail
-	 * to head does not exist, then false is returned.
+	 * otherwise. <br/>
+	 * <br/>
+	 * If one or both of the specified elements are not in this graph or if an
+	 * edge from tail to head does not exist, then false is returned.
 	 * 
 	 * @param tail
-	 *            the tail vertex
+	 *            - the tail vertex
 	 * @param head
-	 *            the head vertex
+	 *            - the head vertex
 	 * @param weight
-	 *            the weight of the edge to set
-	 * @return
+	 *            - the weight of the edge to set
+	 * @return true if the weight of the edge was set successfully, else false
+	 * @throws NullPointerException
+	 *             if one or more of the arguments are null and this graph does
+	 *             not permit null values
+	 * @throws IllegalArgumentException
+	 *             if some property of one or more of the arguments prevents the
+	 *             weight of the edge to be set
 	 */
 	public boolean setWeight(V tail, V head, W weight);
 

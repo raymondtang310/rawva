@@ -13,16 +13,35 @@ class DirectedEdge<V> implements Edge<V> {
 	private final V tail;
 	private final V head;
 
+	/**
+	 * Constructs an edge from the specified tail element to the specified head
+	 * element.
+	 * 
+	 * @param tail
+	 *            - the tail vertex
+	 * @param head
+	 *            - the head vertex
+	 */
 	DirectedEdge(V tail, V head) {
 		this.tail = tail;
 		this.head = head;
 	}
 
+	/**
+	 * Returns the tail of this edge.
+	 * 
+	 * @return the tail of this edge
+	 */
 	@Override
 	public V getTail() {
 		return tail;
 	}
 
+	/**
+	 * Returns the head of this edge.
+	 * 
+	 * @return the head of this edge
+	 */
 	@Override
 	public V getHead() {
 		return head;
@@ -70,8 +89,23 @@ class DirectedEdge<V> implements Edge<V> {
 		return false;
 	}
 
+	/**
+	 * Returns true if the specified elements are equal. More formally, true is
+	 * returned if e1 == e2 or e1.equals(e2). <br/>
+	 * <br/>
+	 * The main advantage of calling this method over calling the equals method
+	 * on one of the elements is that e1 and e2 are both allowed to be null. For
+	 * example, in the case that e1 is null, calling e1.equals(e2) throws a
+	 * NullPointerException whereas calling equals(e1, e2) does not.
+	 * 
+	 * @param e1
+	 *            - one of the elements to be compared
+	 * @param e2
+	 *            - the other element to be compared
+	 * @return true if the specified elements are equal, else false
+	 */
 	private boolean equals(V e1, V e2) {
-		return (e1 == null && e2 == null) || (e1 != null && e1.equals(e2));
+		return (e1 == e2) || (e1 != null && e1.equals(e2));
 	}
 
 }

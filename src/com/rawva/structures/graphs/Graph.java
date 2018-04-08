@@ -23,13 +23,8 @@ public interface Graph<V> {
 
 	/**
 	 * Adds an edge from the specified tail element to the specified head
-	 * element if the edge does not already exist. Returns true if the edge was
-	 * added to this graph after this call. If the edge specified by the tail
-	 * and head elements already exists, then false is returned.
-	 * 
-	 * In order to add an edge between two elements, it is required that the two
-	 * elements have already been added to this graph. If the specified elements
-	 * are not in this graph, then no edge is added and false is returned.
+	 * element. Returns true if the edge was successfully added to this graph
+	 * after this call.
 	 * 
 	 * @param tail
 	 *            - the tail vertex
@@ -37,28 +32,26 @@ public interface Graph<V> {
 	 *            - the head vertex
 	 * @return true if the edge was added to this graph after this call, else
 	 *         false
-	 * @throws ClassCastException
-	 *             if the class of the specified elements prevent them from
-	 *             being added to this graph
 	 * @throws NullPointerException
-	 *             if one or both of the specified elements are null and this
-	 *             graph does not permit null elements
+	 *             if one or more of the arguments are null and this graph does
+	 *             not permit null values
 	 * @throws IllegalArgumentException
-	 *             if some property of one or both of the elements prevents them
-	 *             from being added to this graph
+	 *             if some property of one or more of the arguments prevents the
+	 *             edge from being added to this graph
 	 * @throws IllegalStateException
-	 *             if the elements cannot be added at this time due to insertion
+	 *             if the edge cannot be added at this time due to insertion
 	 *             restrictions
 	 */
 	public boolean addEdge(V tail, V head);
 
 	/**
 	 * Adds the specified element to this graph as a vertex. Returns true if the
-	 * element was added to this graph. Returns false otherwise.
+	 * element was successfully added to this graph after this call.
 	 * 
 	 * @param elem
 	 *            - the element to add
-	 * @return true if the element was added to this graph, else false
+	 * @return true if the element was added to this graph after this call, else
+	 *         false
 	 * @throws ClassCastException
 	 *             if the class of the specified element prevents it from being
 	 *             added to this graph
@@ -79,9 +72,11 @@ public interface Graph<V> {
 	 * false otherwise.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            - the tail vertex of the edge who presence in this graph is to
+	 *            be tested
 	 * @param head
-	 *            - the head vertex
+	 *            - the head vertex of the edge who presence in this graph is to
+	 *            be tested
 	 * @return true if this graph contains an edge from tail to head, else false
 	 */
 	public boolean containsEdge(V tail, V head);

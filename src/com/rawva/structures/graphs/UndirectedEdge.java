@@ -17,6 +17,14 @@ class UndirectedEdge<V> implements Edge<V> {
 	private final V tail;
 	private final V head;
 
+	/**
+	 * Constructs an undirected edge between the specified elements.
+	 * 
+	 * @param e1
+	 *            - one of the vertices to be part of this edge
+	 * @param e2
+	 *            - the other vertex to be part of this edge
+	 */
 	UndirectedEdge(V e1, V e2) {
 		this.tail = e1;
 		this.head = e2;
@@ -74,8 +82,8 @@ class UndirectedEdge<V> implements Edge<V> {
 	}
 
 	/**
-	 * Returns the tail of this edge.
-	 * 
+	 * Returns the tail of this edge. <br/>
+	 * <br/>
 	 * Note that for an undirected edge, (o1, o2) is the same as (o2, o1). We
 	 * consider the tail of this edge to be the element that was input first
 	 * during creation. <br/>
@@ -93,8 +101,8 @@ class UndirectedEdge<V> implements Edge<V> {
 	}
 
 	/**
-	 * Returns the head of this edge.
-	 * 
+	 * Returns the head of this edge. <br/>
+	 * <br/>
 	 * Note that for an undirected edge, (o1, o2) is the same as (o2, o1). We
 	 * consider the head of this edge to be the element that was input second
 	 * during creation. <br/>
