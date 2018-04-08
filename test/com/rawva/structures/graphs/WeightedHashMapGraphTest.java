@@ -213,4 +213,36 @@ public class WeightedHashMapGraphTest {
 		assertEquals(null, graph.getWeight(5, 6));
 	}
 
+	@Test
+	public void testDirectedSetWeight() {
+		WeightedHashMapGraph<Integer, String> graph = new WeightedHashMapGraph<>(true);
+		graph.addVertex(1);
+		graph.addVertex(null);
+		graph.addVertex(-2);
+		assertTrue(graph.addEdge(1, null, "weight"));
+		assertFalse(graph.addEdge(1, null));
+		assertTrue(graph.addEdge(null, 1));
+		assertTrue(graph.addEdge(-2, 1, null));
+		assertEquals("weight", graph.setWeight(1, null, "new weight"));
+		assertEquals(null, graph.setWeight(null, 1, "some other weight"));
+		assertEquals(null, graph.setWeight(-2, 1, "another weight"));
+		assertEquals(null, graph.setWeight(5, 6, "not settable"));
+	}
+
+	@Test
+	public void testUndirectedSetWeight() {
+		WeightedHashMapGraph<Integer, String> graph = new WeightedHashMapGraph<>(false);
+		graph.addVertex(1);
+		graph.addVertex(null);
+		graph.addVertex(-2);
+		assertTrue(graph.addEdge(1, null, "weight"));
+		assertFalse(graph.addEdge(1, null));
+		assertFalse(graph.addEdge(null, 1));
+		assertTrue(graph.addEdge(-2, 1, null));
+		assertEquals("weight", graph.setWeight(1, null, "new weight"));
+		assertEquals("new weight", graph.setWeight(null, 1, "some other weight"));
+		assertEquals(null, graph.setWeight(-2, 1, "another weight"));
+		assertEquals(null, graph.setWeight(5, 6, "not settable"));
+	}
+
 }

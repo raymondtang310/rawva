@@ -58,11 +58,13 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 
 	/**
 	 * Sets the weight of the edge from tail to head to the specified weight.
-	 * Returns true if the weight of the edge is set successfully. Returns false
-	 * otherwise. <br/>
+	 * Returns the previous weight of the edge if the edge weight was previously
+	 * set, or null otherwise. A null return may also indicate that the weight
+	 * of the edge was set to null, if the implementation supports null values.
+	 * <br/>
 	 * <br/>
 	 * If one or both of the specified elements are not in this graph or if an
-	 * edge from tail to head does not exist, then false is returned.
+	 * edge from tail to head does not exist, then null is returned.
 	 * 
 	 * @param tail
 	 *            - the tail vertex
@@ -70,7 +72,7 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 *            - the head vertex
 	 * @param weight
 	 *            - the weight of the edge to set
-	 * @return true if the weight of the edge was set successfully, else false
+	 * @return the previous weight of the edge
 	 * @throws NullPointerException
 	 *             if one or more of the arguments are null and this graph does
 	 *             not permit null values
@@ -78,6 +80,6 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 *             if some property of one or more of the arguments prevents the
 	 *             weight of the edge to be set
 	 */
-	public boolean setWeight(V tail, V head, W weight);
+	public W setWeight(V tail, V head, W weight);
 
 }

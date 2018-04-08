@@ -221,11 +221,12 @@ public class WeightedHashMapGraph<V, W> implements WeightedGraph<V, W> {
 
 	/**
 	 * Sets the weight of the edge from tail to head to the specified weight.
-	 * Returns true if the weight of the edge is set successfully. Returns false
-	 * otherwise. <br/>
+	 * Returns the previous weight of the edge if the edge weight was previously
+	 * set, or null otherwise. A null return may also indicate that the weight
+	 * of the edge was set to null. <br/>
 	 * <br/>
 	 * If one or both of the specified elements are not in this graph or if an
-	 * edge from tail to head does not exist, then false is returned.
+	 * edge from tail to head does not exist, then null is returned.
 	 * 
 	 * @param tail
 	 *            - the tail vertex
@@ -233,16 +234,15 @@ public class WeightedHashMapGraph<V, W> implements WeightedGraph<V, W> {
 	 *            - the head vertex
 	 * @param weight
 	 *            - the weight of the edge to set
-	 * @return true if the weight of the edge was set successfully, else false
+	 * @return the previous weight of the edge
 	 */
 	@Override
-	public boolean setWeight(V tail, V head, W weight) {
-		Edge<V> edge = isDirected ? new DirectedEdge<>(tail, head) : new UndirectedEdge<>(tail, head);
-		if (!edgeWeights.containsKey(edge)) {
-			return false;
+	public W setWeight(V tail, V head, W weight) {
+		if (!containsEdge(tail, head)) {
+			return null;
 		}
-		edgeWeights.put(edge, weight);
-		return true;
+		Edge<V> edge = isDirected ? new DirectedEdge<>(tail, head) : new UndirectedEdge<>(tail, head);
+		return edgeWeights.put(edge, weight);
 	}
 
 }
