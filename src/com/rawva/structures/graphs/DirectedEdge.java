@@ -6,7 +6,7 @@ package com.rawva.structures.graphs;
  * @author Raymond Tang
  *
  * @param <V>
- *            - the type of elements in this edge
+ *            the type of elements in this edge
  */
 public class DirectedEdge<V> implements Graph.Edge<V> {
 
@@ -18,9 +18,9 @@ public class DirectedEdge<V> implements Graph.Edge<V> {
 	 * element.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 */
 	public DirectedEdge(V tail, V head) {
 		this.tail = tail;
@@ -67,7 +67,7 @@ public class DirectedEdge<V> implements Graph.Edge<V> {
 	 * equal and o2 and o4 are equal.
 	 * 
 	 * @param obj
-	 *            - the object to compare to this
+	 *            the object to compare to this
 	 * @return true if the specified object is equal to this, else false
 	 */
 	@Override
@@ -99,9 +99,9 @@ public class DirectedEdge<V> implements Graph.Edge<V> {
 	 * NullPointerException whereas calling equals(e1, e2) does not.
 	 * 
 	 * @param e1
-	 *            - one of the elements to be compared
+	 *            one of the elements to be compared
 	 * @param e2
-	 *            - the other element to be compared
+	 *            the other element to be compared
 	 * @return true if the specified elements are equal, else false
 	 */
 	private boolean equals(V e1, V e2) {

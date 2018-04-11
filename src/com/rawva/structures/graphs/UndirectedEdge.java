@@ -10,7 +10,7 @@ import java.util.Set;
  * @author Raymond Tang
  *
  * @param <V>
- *            - the type of elements in this edge
+ *            the type of elements in this edge
  */
 public class UndirectedEdge<V> implements Graph.Edge<V> {
 
@@ -21,9 +21,9 @@ public class UndirectedEdge<V> implements Graph.Edge<V> {
 	 * Constructs an undirected edge between the specified elements.
 	 * 
 	 * @param e1
-	 *            - one of the vertices to be part of this edge
+	 *            one of the vertices to be part of this edge
 	 * @param e2
-	 *            - the other vertex to be part of this edge
+	 *            the other vertex to be part of this edge
 	 */
 	public UndirectedEdge(V e1, V e2) {
 		this.tail = e1;
@@ -53,7 +53,7 @@ public class UndirectedEdge<V> implements Graph.Edge<V> {
 	 * o3 are equal.
 	 * 
 	 * @param obj
-	 *            - the object to compare to this
+	 *            the object to compare to this
 	 * @return true if the specified object is equal to this, else false
 	 */
 	@Override

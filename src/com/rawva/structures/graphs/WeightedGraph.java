@@ -8,9 +8,9 @@ package com.rawva.structures.graphs;
  * @author Raymond Tang
  *
  * @param <V>
- *            - the type of elements (vertices) in this graph
+ *            the type of elements (vertices) in this graph
  * @param <W>
- *            - the type of edge weights in this graph
+ *            the type of edge weights in this graph
  */
 public interface WeightedGraph<V, W> extends Graph<V> {
 
@@ -20,11 +20,11 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 * added to this graph after this call.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @param weight
-	 *            - the weight of the edge
+	 *            the weight of the edge
 	 * @return true if the edge was added to this graph after this call, else
 	 *         false
 	 * @throws NullPointerException
@@ -46,9 +46,9 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 * implementation supports null values.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @return the weight of the edge from tail to head
 	 * @throws NullPointerException
 	 *             if one or both of the specified elements are null and this
@@ -67,11 +67,11 @@ public interface WeightedGraph<V, W> extends Graph<V> {
 	 * edge from tail to head does not exist, then null is returned.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @param weight
-	 *            - the weight of the edge to set
+	 *            the weight of the edge to set
 	 * @return the previous weight of the edge
 	 * @throws NullPointerException
 	 *             if one or more of the arguments are null and this graph does

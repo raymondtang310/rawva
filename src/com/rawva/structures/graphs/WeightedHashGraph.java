@@ -16,9 +16,9 @@ import java.util.Set;
  * @author Raymond Tang
  *
  * @param <V>
- *            - the type of elements in this graph
+ *            the type of elements in this graph
  * @param <W>
- *            - the type of edge weights in this graph
+ *            the type of edge weights in this graph
  */
 public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 
@@ -30,7 +30,7 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * Constructs an empty WeightedHashMapGraph.
 	 * 
 	 * @param isDirected
-	 *            - value to specify if this graph is directed (true) or
+	 *            value to specify if this graph is directed (true) or
 	 *            undirected (false)
 	 */
 	public WeightedHashGraph(boolean isDirected) {
@@ -57,9 +57,9 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * are not in this graph, then no edge is added and false is returned.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @return true if the edge was added to this graph, else false
 	 */
 	@Override
@@ -79,11 +79,11 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * are not in this graph, then no edge is added and false is returned.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @param weight
-	 *            - the weight of the edge
+	 *            the weight of the edge
 	 * @return true if the edge was added to this graph, else false
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * element that is already present in this graph, false is returned.
 	 * 
 	 * @param elem
-	 *            - the element to add
+	 *            the element to add
 	 * @return true if the element was added to this graph after this call, else
 	 *         false
 	 */
@@ -142,10 +142,10 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * i.e, containsEdge(tail, head) == containsEdge(head, tail).
 	 * 
 	 * @param tail
-	 *            - the tail vertex of the edge who presence in this graph is to
+	 *            the tail vertex of the edge who presence in this graph is to
 	 *            be tested
 	 * @param head
-	 *            - the head vertex of the edge who presence in this graph is to
+	 *            the head vertex of the edge who presence in this graph is to
 	 *            be tested
 	 * @return true if this graph contains an edge from tail to head, else false
 	 */
@@ -160,7 +160,7 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * otherwise.
 	 * 
 	 * @param elem
-	 *            - the element whose presence in this graph is to be tested
+	 *            the element whose presence in this graph is to be tested
 	 * @return true if this graph contains the specified element, else false
 	 */
 	@Override
@@ -174,7 +174,7 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * returned.
 	 * 
 	 * @param elem
-	 *            - the element whose neighbors we want
+	 *            the element whose neighbors we want
 	 * @return a set of elements that are adjacent to this element
 	 */
 	@Override
@@ -218,9 +218,9 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * indicate that the weight of the edge was set to null.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @return the weight of the edge from tail to head
 	 */
 	@Override
@@ -250,11 +250,11 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	 * edge from tail to head does not exist, then null is returned.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @param weight
-	 *            - the weight of the edge to set
+	 *            the weight of the edge to set
 	 * @return the previous weight of the edge
 	 */
 	@Override

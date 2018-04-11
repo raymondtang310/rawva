@@ -16,7 +16,7 @@ import java.util.Set;
  * 
  * @author Raymond Tang
  * @param <V>
- *            - the type of elements (vertices) in this graph
+ *            the type of elements (vertices) in this graph
  */
 public interface Graph<V> {
 
@@ -28,7 +28,7 @@ public interface Graph<V> {
 	 * @author Raymond Tang
 	 *
 	 * @param <V>
-	 *            - the type of elements in this edge
+	 *            the type of elements in this edge
 	 */
 	public interface Edge<V> {
 
@@ -54,9 +54,9 @@ public interface Graph<V> {
 	 * after this call.
 	 * 
 	 * @param tail
-	 *            - the tail vertex
+	 *            the tail vertex
 	 * @param head
-	 *            - the head vertex
+	 *            the head vertex
 	 * @return true if the edge was added to this graph after this call, else
 	 *         false
 	 * @throws NullPointerException
@@ -76,7 +76,7 @@ public interface Graph<V> {
 	 * element was successfully added to this graph after this call.
 	 * 
 	 * @param elem
-	 *            - the element to add
+	 *            the element to add
 	 * @return true if the element was added to this graph after this call, else
 	 *         false
 	 * @throws ClassCastException
@@ -105,10 +105,10 @@ public interface Graph<V> {
 	 * false otherwise.
 	 * 
 	 * @param tail
-	 *            - the tail vertex of the edge who presence in this graph is to
+	 *            the tail vertex of the edge who presence in this graph is to
 	 *            be tested
 	 * @param head
-	 *            - the head vertex of the edge who presence in this graph is to
+	 *            the head vertex of the edge who presence in this graph is to
 	 *            be tested
 	 * @return true if this graph contains an edge from tail to head, else false
 	 */
@@ -119,7 +119,7 @@ public interface Graph<V> {
 	 * otherwise.
 	 * 
 	 * @param elem
-	 *            - the element whose presence in this graph is to be tested
+	 *            the element whose presence in this graph is to be tested
 	 * @return true if this graph contains the specified element, else false
 	 */
 	boolean containsVertex(V elem);
@@ -130,7 +130,7 @@ public interface Graph<V> {
 	 * returned.
 	 * 
 	 * @param elem
-	 *            - the element whose neighbors we want
+	 *            the element whose neighbors we want
 	 * @return a set of elements that are adjacent to this element
 	 */
 	Set<V> getAdjacentElements(V elem);
