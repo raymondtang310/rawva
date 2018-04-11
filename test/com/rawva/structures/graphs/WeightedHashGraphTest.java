@@ -50,6 +50,23 @@ public class WeightedHashGraphTest {
 	}
 
 	@Test
+	public void testClear() {
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>();
+		assertTrue(graph.addVertex(1));
+		assertTrue(graph.addVertex(null));
+		assertTrue(graph.addVertex(-7));
+		assertTrue(graph.addEdge(-7, 1));
+		graph.clear();
+		assertTrue(graph.isEmpty());
+		assertEquals(0, graph.getNumberOfVertices());
+		assertEquals(0, graph.getNumberOfEdges());
+		assertTrue(graph.addVertex(1));
+		assertTrue(graph.addVertex(null));
+		assertTrue(graph.addVertex(-7));
+		assertTrue(graph.addEdge(-7, 1));
+	}
+
+	@Test
 	public void testDirectedContainsEdge() {
 		WeightedHashGraph<Integer, Integer> directedGraph = new WeightedHashGraph<>(true);
 		directedGraph.addVertex(null);
@@ -211,6 +228,18 @@ public class WeightedHashGraphTest {
 		assertEquals("weight", graph.getWeight(null, 1));
 		assertEquals(null, graph.getWeight(-2, 1));
 		assertEquals(null, graph.getWeight(5, 6));
+	}
+
+	@Test
+	public void testIsEmpty() {
+		WeightedHashGraph<Integer, Integer> graph = new WeightedHashGraph<>();
+		assertTrue(graph.isEmpty());
+		assertTrue(graph.addVertex(1));
+		assertFalse(graph.isEmpty());
+		graph.clear();
+		assertTrue(graph.isEmpty());
+		assertTrue(graph.addVertex(null));
+		assertFalse(graph.isEmpty());
 	}
 
 	@Test

@@ -17,7 +17,6 @@ import java.util.Set;
  * @author Raymond Tang
  * @param <V>
  *            - the type of elements (vertices) in this graph
- *
  */
 public interface Graph<V> {
 
@@ -96,6 +95,12 @@ public interface Graph<V> {
 	boolean addVertex(V elem);
 
 	/**
+	 * Removes all of the elements from this graph. This graph will be empty
+	 * after this method returns.
+	 */
+	void clear();
+
+	/**
 	 * Returns true if this graph contains an edge from tail to head. Returns
 	 * false otherwise.
 	 * 
@@ -150,5 +155,13 @@ public interface Graph<V> {
 	 * @return the set of elements (vertices) in this graph
 	 */
 	Set<V> getVertices();
+
+	/**
+	 * Returns true if this graph contains no elements (i.e., number of vertices
+	 * is 0).
+	 * 
+	 * @return true if this graph contains no elements, else false
+	 */
+	boolean isEmpty();
 
 }

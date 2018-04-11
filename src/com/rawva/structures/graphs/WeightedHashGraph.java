@@ -125,6 +125,16 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	}
 
 	/**
+	 * Removes all of the elements from this graph. This graph will be empty
+	 * after this method returns.
+	 */
+	@Override
+	public void clear() {
+		vertexNeighbors.clear();
+		edgeWeights.clear();
+	}
+
+	/**
 	 * Returns true if this graph contains an edge from tail to head. Returns
 	 * false otherwise. <br/>
 	 * <br/>
@@ -217,6 +227,17 @@ public class WeightedHashGraph<V, W> implements WeightedGraph<V, W> {
 	public W getWeight(V tail, V head) {
 		Edge<V> edge = isDirected ? new DirectedEdge<>(tail, head) : new UndirectedEdge<>(tail, head);
 		return edgeWeights.get(edge);
+	}
+
+	/**
+	 * Returns true if this graph contains no elements (i.e., number of vertices
+	 * is 0).
+	 * 
+	 * @return true if this graph contains no elements, else false
+	 */
+	@Override
+	public boolean isEmpty() {
+		return getNumberOfVertices() == 0;
 	}
 
 	/**
