@@ -13,7 +13,7 @@ import java.util.Set;
 public class StringUtils {
 
 	/**
-	 * Converts the first letter of the specified string to uppercase. If the
+	 * Converts the first letter of the specified string to upper case. If the
 	 * specified string is empty, then the empty string is returned. If the
 	 * first letter of the specified string is already capitalized, then the
 	 * specified string is returned as is.
@@ -21,7 +21,7 @@ public class StringUtils {
 	 * @param s
 	 *            the string to capitalize
 	 * @return a copy of the specified string with the first letter converted to
-	 *         uppercase, or the empty string if the specified string is empty
+	 *         upper case, or the empty string if the specified string is empty
 	 * @throws NullPointerException
 	 *             if the specified string is null
 	 */
