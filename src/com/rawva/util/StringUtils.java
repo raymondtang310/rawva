@@ -11,9 +11,10 @@ import java.util.Arrays;
 public class StringUtils {
 
 	/**
-	 * Returns a copy of the specified string with the first letter converted to
-	 * uppercase. If the specified string is empty, then the empty string is
-	 * returned.
+	 * Converts the first letter of the specified string to uppercase. If the
+	 * specified string is empty, then the empty string is returned. If the
+	 * first letter of the specified string is already capitalized, then the
+	 * specified string is returned as is.
 	 * 
 	 * @param s
 	 *            the string to capitalize
@@ -33,8 +34,8 @@ public class StringUtils {
 	}
 
 	/**
-	 * Returns a copy of the specified string with the characters in sorted
-	 * order. <br/>
+	 * Sorts the specified string by its characters in lexicographical order.
+	 * <br/>
 	 * <br/>
 	 * Examples: <br/>
 	 * <br/>
@@ -43,8 +44,7 @@ public class StringUtils {
 	 * 
 	 * @param s
 	 *            the string to sort
-	 * @return a copy of the specified string with the characters in sorted
-	 *         order
+	 * @return the sorted string
 	 * @throws NullPointerException
 	 *             if the specified string is null
 	 */
