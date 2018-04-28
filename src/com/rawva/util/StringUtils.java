@@ -1,6 +1,8 @@
 package com.rawva.util;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class provides various operations on strings.
@@ -31,6 +33,48 @@ public class StringUtils {
 			return "";
 		}
 		return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+	}
+
+	/**
+	 * Computes all permutations of the specified string and returns them in a
+	 * set. If the specified string is null, then an empty set is returned. If
+	 * the specified string is empty, then a set containing the empty string is
+	 * returned.
+	 * 
+	 * @param s
+	 *            the string to permute
+	 * @return a set containing all permutations of the specified string
+	 */
+	public static Set<String> permute(String s) {
+		Set<String> permutations = new HashSet<>();
+		if (s == null) {
+			return permutations;
+		}
+		collectPermutations(permutations, "", s);
+		return permutations;
+	}
+
+	/**
+	 * Computes all permutations of the specified string toPermute.
+	 * 
+	 * @param permutations
+	 *            a set to store all computed permutations of the specified
+	 *            string
+	 * @param prefix
+	 *            a string containing the characters of the current permutation
+	 *            in progress
+	 * @param toPermute
+	 *            the string to permute
+	 */
+	private static void collectPermutations(Set<String> permutations, String prefix, String toPermute) {
+		if (toPermute.isEmpty()) {
+			permutations.add(prefix);
+			return;
+		}
+		for (int i = 0; i < toPermute.length(); i++) {
+			collectPermutations(permutations, prefix + toPermute.charAt(i),
+					toPermute.substring(0, i) + toPermute.substring(i + 1));
+		}
 	}
 
 	/**
