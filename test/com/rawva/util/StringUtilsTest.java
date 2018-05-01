@@ -18,6 +18,15 @@ public class StringUtilsTest {
 	}
 
 	@Test
+	public void testGetMostFrequentCharacter() {
+		assertEquals('b', StringUtils.getMostFrequentCharacter("abb"));
+		assertEquals('a', StringUtils.getMostFrequentCharacter("abc"));
+		assertEquals('1', StringUtils.getMostFrequentCharacter("112233"));
+		assertEquals('*', StringUtils.getMostFrequentCharacter("*def*"));
+		assertEquals('$', StringUtils.getMostFrequentCharacter("$def$gg$gz$"));
+	}
+
+	@Test
 	public void testPermute() {
 		assertTrue(StringUtils.permute(null).isEmpty());
 

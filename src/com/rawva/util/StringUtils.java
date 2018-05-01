@@ -1,7 +1,9 @@
 package com.rawva.util;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -33,6 +35,51 @@ public class StringUtils {
 			return "";
 		}
 		return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+	}
+
+	/**
+	 * Returns the character that occurs the most frequently in the specified
+	 * string. If there is a tie, the most frequent character that appears
+	 * earliest in the string is returned. <br/>
+	 * <br/>
+	 * Examples:<br/>
+	 * <br/>
+	 * "abb" -> 'b' <br/>
+	 * "$def$" -> '$' <br/>
+	 * "abc" -> 'a' <br/>
+	 * 
+	 * @param s
+	 *            the string in which to find the most frequent character
+	 * @return the character that occurs the most frequently in the specified
+	 *         string
+	 */
+	public static char getMostFrequentCharacter(String s) {
+		if (s == null) {
+			throw new NullPointerException("Input string cannot be null");
+		}
+		if (s.isEmpty()) {
+			throw new IllegalArgumentException("Input string cannot be empty");
+		}
+		// Find the count of each character in the string
+		Map<Character, Integer> counts = new HashMap<>();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (!counts.containsKey(c)) {
+				counts.put(c, 1);
+			} else {
+				int count = counts.get(c);
+				counts.put(c, count + 1);
+			}
+		}
+		// Find the character with the highest count
+		char maxChar = s.charAt(0);
+		for (int i = 1; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (counts.get(c) > counts.get(maxChar)) {
+				maxChar = c;
+			}
+		}
+		return maxChar;
 	}
 
 	/**
