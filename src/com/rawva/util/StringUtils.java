@@ -29,7 +29,7 @@ public class StringUtils {
 	 */
 	public static String capitalize(String s) {
 		if (s == null) {
-			throw new NullPointerException("Input string should not be null");
+			throw new NullPointerException("Input string cannot be null");
 		}
 		if (s.isEmpty()) {
 			return "";
@@ -141,7 +141,7 @@ public class StringUtils {
 	 */
 	public static String sort(String s) {
 		if (s == null) {
-			throw new NullPointerException("Input string should not be null");
+			throw new NullPointerException("Input string cannot be null");
 		}
 		char[] chars = s.toCharArray();
 		Arrays.sort(chars);
