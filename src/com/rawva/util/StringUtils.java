@@ -52,6 +52,10 @@ public class StringUtils {
 	 *            the string in which to find the most frequent character
 	 * @return the character that occurs the most frequently in the specified
 	 *         string
+	 * @throws NullPointerException
+	 *             if the specified string is null
+	 * @throws IllegalArgumentException
+	 *             if the specified string is empty
 	 */
 	public static char getMostFrequentCharacter(String s) {
 		if (s == null) {
